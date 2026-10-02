@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1448" height="1086" viewBox="0 0 1448 1086" role="img" aria-labelledby="title desc">
+  <title id="title">深圳大学城地图底图</title>
+  <desc id="desc">由校区、道路、建筑、绿地、水体与运动场色块组成的示意地图。坐标范围与原有底图一致。</desc>
+  <defs>
+    <style>
+      .road { fill: none; stroke: #343c3b; stroke-width: 17; stroke-linejoin: round; stroke-linecap: square; }
+      .lane { fill: none; stroke: #46514e; stroke-width: 8; stroke-linejoin: round; }
+      .path { fill: none; stroke: #5d7255; stroke-width: 5; stroke-linejoin: round; }
+      .building { fill: #fffdf7; }
+      .water { fill: #93bdcd; }
+      .field { fill: #dce6a1; }
+      .court { fill: #d6dfa0; }
+      .court-line { fill: none; stroke: #f8fae8; stroke-width: 1.5; }
+    </style>
+    <g id="court">
+      <rect width="21" height="32" rx="1" class="court"/>
+      <rect x="2" y="2" width="17" height="28" class="court-line"/>
+      <path d="M2 16H19M6 2V30M15 2V30" class="court-line"/>
+    </g>
+    <g id="small-building" class="building">
+      <path d="M0 0H18V5H22V13H18V18H0V13H-4V5H0Z"/>
+    </g>
+  </defs>
+
+  <rect width="1448" height="1086" fill="#f7f7f2"/>
+
+  <!-- 校区与公共区域：保留原底图的 1448 × 1086 坐标框架。 -->
+  <g id="districts">
+    <path id="tsinghua" fill="#7394ac" d="M163 128L357 90L567 210L590 267L570 306L579 339L532 397H162Z"/>
+    <path id="pku" fill="#bd7772" d="M688 209L955 90L1246 214L1300 282L1307 420L1117 421L919 350L800 347L791 286L733 296L677 294L655 266L624 253L590 267L568 210Z"/>
+    <path id="hit" fill="#80a3b3" d="M161 476L479 483L503 591L604 625L685 594Q709 688 795 756Q890 832 920 915L802 984L776 942L688 865H395L391 821Q391 799 372 786L176 681L161 689Z"/>
+    <path id="mountain-park" fill="#d7e2a0" d="M800 377L916 378L1027 422L1005 478L1021 540L1059 574L1091 791L1083 876L999 871L920 915Q890 832 795 756Q709 688 685 594L652 421Z"/>
+    <path id="sports-zone" fill="#90af70" d="M1027 422L1117 453L1311 455L1341 890L1083 876L1091 791L1059 574L1021 540L1005 478Z"/>
+    <path id="shared-north" fill="#d7d8d2" d="M568 210H622L641 226L694 221L733 293H677L655 266L624 253L590 267Z"/>
+    <path id="shared-center" fill="#d9dad4" d="M479 483L652 421L717 584L604 625L503 591Z"/>
+  </g>
+
+  <!-- 大沙河与两岸空地；桥梁在道路层之上绘制。 -->
+  <g id="river">
+    <path fill="#f7f7f2" d="M100 400L531 404L793 294L919 299L1117 397L1386 392V443L1116 445L915 370L800 370L532 463L100 454Z"/>
+    <path class="water" d="M100 417L531 421L794 315L919 318L1117 418L1386 414V433L1117 434L917 354L800 352L531 446L100 441Z"/>
+  </g>
+
+  <!-- 校区内道路、园路与建筑之间的通道。 -->
+  <g id="campus-lanes" class="lane">
+    <path d="M270 124V392H531L579 339L570 306L590 267"/>
+    <path d="M270 184H362L570 306M362 184L535 200"/>
+    <path d="M270 207H389L500 262V392M500 262L535 200"/>
+    <path d="M316 211H389L446 247V294L408 355H316Z" stroke-width="5"/>
+    <path d="M446 294H476L501 262M446 294L408 331H375M316 355H408" stroke-width="5"/>
+    <path d="M219 135V229H161M219 183H270M220 229V269M219 210H270" stroke-width="5"/>
+    <path d="M161 481H261V623L414 707L370 782M261 551H365V592L423 628L503 591M365 551V504"/>
+    <path d="M161 550H261M261 581H309L335 609L365 592M309 581V551" stroke-width="5"/>
+    <path d="M289 638L314 588M349 671L376 641Q390 626 420 624M261 551H365" stroke-width="5"/>
+    <path d="M330 660L295 730M479 483V392M606 624V695Q602 741 563 773V863M795 756L713 879"/>
+    <path d="M712 233L733 296L792 272M762 178L794 296L800 377"/>
+    <path d="M800 297L919 299L1016 339L991 401M1174 184L1173 377H1117L1016 339L1040 287L1019 241L958 217L864 247"/>
+    <path d="M795 271L958 211L1028 237M899 143L923 211M969 132L951 185M1024 156L1002 197M1075 178L1058 214M1124 198L1108 233" stroke-width="5"/>
+    <path d="M1040 287L1077 305L1106 297L1120 256M1120 256L1174 262M1077 305L1120 332L1173 338" stroke-width="5"/>
+    <path d="M1027 422L1005 478L1021 540L1059 574L1091 791L1083 876"/>
+  </g>
+
+  <g id="park-trails" class="path">
+    <path d="M800 378L806 482L773 566L749 571" stroke="#46514e" stroke-width="8"/>
+    <path d="M806 482L828 503L846 537L869 548L887 579L919 600L908 619L874 614L851 586L831 566L798 551L773 566"/>
+    <path d="M1033 426L1024 459L1019 477L1036 531L1071 562L1105 787L1095 838H1087"/>
+    <path d="M1034 441L1081 454L1114 455V463H1088L1052 452M1095 838L1118 842L1136 803L1140 744"/>
+  </g>
+
+  <!-- 水体轮廓。 -->
+  <g id="lakes" class="water">
+    <path id="tsinghua-lake" d="M342 239L385 235L425 253L414 278L412 309L389 321L364 342L340 345Q328 342 328 330L336 311L331 285L327 263Q326 248 342 239Z"/>
+    <path id="mirror-lake" d="M1040 224L1067 225L1083 233L1080 242L1116 255L1101 296L1078 305L1041 291L1026 253Z"/>
+    <path id="sports-lake" d="M1178 770Q1137 774 1130 814Q1122 851 1177 868Q1167 823 1178 770Z"/>
+  </g>
+
+  <!-- 运动场：跑道、草坪与球场均为可单独编辑的矢量块。 -->
+  <g id="sports-fields">
+    <rect x="180" y="271" width="72" height="129" rx="36" class="field"/>
+    <rect x="180" y="554" width="72" height="128" rx="36" class="field"/>
+    <rect x="1188" y="234" width="70" height="115" rx="35" class="field"/>
+    <path class="field" d="M1061 468Q1081 461 1104 478Q1123 491 1120 532Q1106 553 1076 542Q1042 534 1043 498Q1044 476 1061 468Z"/>
+    <rect x="1133" y="583" width="65" height="126" rx="32.5" class="field"/>
+    <path class="field" d="M1127 580Q1084 648 1127 716Z"/>
+    <path fill="#b6cb82" d="M181 291H174V381H181ZM180 574H174V661H180Z"/>
+    <use href="#court" x="279" y="339"/>
+    <use href="#court" x="279" y="374" transform="translate(0 -2)"/>
+    <use href="#court" x="279" y="557"/>
+    <use href="#court" x="302" y="557"/>
+    <use href="#court" x="1265" y="293"/>
+    <use href="#court" x="1265" y="326"/>
+    <rect x="1184" y="358" width="31" height="24" class="court"/>
+    <g transform="translate(1188 788)">
+      <rect x="-5" y="-7" width="45" height="81" class="court"/>
+      <use href="#court" transform="scale(.6)"/>
+      <use href="#court" x="24" transform="scale(.6)"/>
+      <use href="#court" y="37" transform="scale(.6)"/>
+      <use href="#court" x="24" y="37" transform="scale(.6)"/>
+      <use href="#court" y="74" transform="scale(.6)"/>
+      <use href="#court" x="24" y="74" transform="scale(.6)"/>
+    </g>
+  </g>
+
+  <!-- 清华校区建筑。 -->
+  <g id="tsinghua-buildings" class="building">
+    <path d="M197 145H219V168H197Z M232 124H258V148H250V202H211V172H232Z M277 135H297V157H277Z M310 135H344V172H310Z"/>
+    <path d="M184 189H205V212H184Z M199 217H219V234H199Z M175 236H196V256H175Z M222 236H250V257H222Z M279 196H310V231H279Z"/>
+    <path d="M331 188H358V204H331Z M370 171L380 151L425 176L415 193Z M365 189L421 221L411 239L355 207Z"/>
+    <path d="M438 207L448 189L482 209L472 226Z M494 240L505 222L537 241L527 259Z M536 264L546 248L573 264L563 281Z"/>
+    <path d="M447 254L458 239L491 258L480 274Z M437 271L470 288L460 307L437 307Z"/>
+    <path d="M512 290L531 289L550 297L531 306V335L553 356L539 370L512 343Z"/>
+    <path d="M438 305H458V344L423 381H375V361H408L438 331Z"/>
+    <path d="M323 359H348V376H323Z M352 359H372V376H352Z M341 215H346V226H337V220H341Z"/>
+    <path d="M202 150H212V157H220V164H212V173H204V164H197V157H202Z M206 209H216V216H225V223H216V230H206V223H198V216H206Z"/>
+  </g>
+
+  <!-- 北大校区建筑。 -->
+  <g id="pku-buildings" class="building">
+    <path d="M719 215L754 199L761 213L725 229Z M727 247L765 229L772 244L749 254L757 276L774 268L781 282L741 300Z"/>
+    <g transform="translate(815 178) rotate(-24)">
+      <path d="M0 0H34V15H15V28H30V42H0Z M47 0H76V42H47Z M87 0H120V15H102V29H120V43H87Z"/>
+      <rect x="-8" y="56" width="131" height="17"/>
+    </g>
+    <path d="M968 173L983 129L1021 143L1007 176L1017 180L1012 190Z M1022 192L1038 150L1073 163L1056 207Z M1065 209L1080 168L1110 179L1096 221Z"/>
+    <path d="M967 189L1037 213L1031 231L961 207Z M827 261H886V283H827Z"/>
+    <path d="M1125 254H1142V271H1163V286H1138L1127 305H1163V322H1123L1105 331L1123 349L1110 361L1085 335L1055 323L1030 316L1038 298L1077 313L1090 303L1110 282V262H1125Z"/>
+    <rect x="1144" y="348" width="24" height="23"/>
+    <path d="M807 241L820 236L827 254L814 259Z M917 205L932 200L937 214L922 219Z M933 226L948 231L943 245L928 240Z"/>
+    <path d="M974 228L991 234L986 248L969 242Z M999 238L1016 244L1011 258L994 252Z M1119 226H1135V249H1119Z"/>
+  </g>
+
+  <!-- 大学城共享设施；浅色通道保留各建筑之间的分隔。 -->
+  <g id="shared-buildings">
+    <g fill="#a5aaa6">
+      <path d="M640 226L676 229L669 253L680 267L705 258L718 285H680L666 268L640 257Z"/>
+      <path d="M493 505L526 508L551 535L516 569Z M538 501L578 483L601 540L561 553Z M588 479L643 455L673 519L611 542Z"/>
+      <path d="M526 581L564 551L589 563L594 611Z M601 558L630 548L650 593L607 610Z M639 545L680 529L697 575L659 590Z"/>
+    </g>
+    <g class="building">
+      <path d="M597 297L629 282L642 312L610 326Z"/>
+      <path d="M592 374L632 358L648 397L608 413Z"/>
+    </g>
+  </g>
+
+  <!-- 哈工大校区建筑：北侧研究生院、南侧宿舍与教学组团。 -->
+  <g id="hit-buildings" class="building">
+    <path d="M174 504H199V543H174Z M210 502H251V543H210Z M271 503H313V542H271Z M324 503H359V542H324Z M369 505H412V532H398V541H369Z"/>
+    <path d="M370 562H391L424 587L432 590L448 613L424 628L409 602L390 586H370Z M447 565L466 541L485 557L496 584L465 598Z"/>
+    <path d="M477 616L510 596L537 613V628L502 652L495 640L524 621V616L510 608L485 626Z"/>
+    <path d="M238 697L248 678L298 705L288 721Z M306 731L313 719L337 732L330 745Z M341 748L348 737L373 750L366 763Z M323 698L343 680L386 708L371 735L339 718Z"/>
+    <path d="M390 782L411 761L435 785L414 806Z M462 782H508V813H462Z M513 782H545V813H513Z M421 823H471V845H421Z M483 823H508V845H483Z M519 823H545V845H519Z"/>
+    <path d="M620 641H673V674L687 675L705 710L645 785L631 774L685 710L675 690H620Z"/>
+    <path d="M609 735L631 705L658 727L637 754Z M587 770L601 748L617 760L603 778V806H674L717 837L706 852L666 823H587Z"/>
+    <path d="M707 742L718 730L768 772L757 784Z M790 798L799 787L818 803L808 814Z"/>
+    <path d="M800 811L815 794L858 831L849 843L859 853L847 868L861 879L876 868L887 881L873 896L857 891L817 858L792 886L805 897L821 880L834 892L817 911L827 921L843 903L855 915L842 930L852 943L818 960L806 941L817 929L740 871L765 839L777 850L764 866L780 878L792 864L781 854L803 829L791 820Z"/>
+    <path d="M839 913L865 895L883 922L855 939Z"/>
+    <use href="#small-building" x="449" y="838" transform="translate(-84 -16) scale(.85)"/>
+    <use href="#small-building" x="335" y="770" transform="translate(-30 -25) scale(.85)"/>
+  </g>
+
+  <!-- 东侧运动与生活设施。 -->
+  <g id="sports-buildings" class="building">
+    <path d="M1177 477H1289V494H1274V517H1290V533H1274V550H1293V567H1274V591H1295V608H1231V567H1240V533H1180V517H1240V494H1177Z"/>
+    <path fill="#90af70" d="M1253 494H1261V550H1253Z"/>
+    <path d="M1258 642H1302V654H1268V672H1300V690H1258V660H1243V697H1232V649H1258Z"/>
+    <path d="M1223 711H1262V725H1280V712H1306V735H1223Z"/>
+    <use href="#small-building" x="1257" y="752"/>
+    <use href="#small-building" x="1289" y="771"/>
+    <use href="#small-building" x="1261" y="794"/>
+    <use href="#small-building" x="1290" y="814"/>
+    <use href="#small-building" x="1260" y="835"/>
+  </g>
+
+  <!-- 主干道路：路径与原地图中的路口、校门及 POI 坐标保持对应。 -->
+  <g id="main-roads" class="road">
+    <path d="M110 130L357 90L567 210H688L955 90L1246 214L1300 282L1344 942"/>
+    <path d="M187 54L162 228L160 725L110 775" stroke-width="11"/>
+    <path d="M103 229H162M102 340H160M101 390H161M101 580H160M100 689L176 681" stroke-width="11"/>
+    <path d="M100 469L533 482L800 377L916 378L1117 452L1387 454"/>
+    <path d="M176 681L372 786Q395 800 395 824V917"/>
+    <path d="M341 864H688L777 943L802 984L999 871L1391 893"/>
+    <path d="M685 594Q709 688 795 756Q890 832 920 915" stroke-width="10"/>
+    <path d="M955 90V57M1316 543H1390M1334 739L1399 708" stroke-width="10"/>
+    <path d="M590 267L624 253L655 266L677 294H733" stroke-width="7"/>
+  </g>
+
+  <!-- 中央图书馆 / 跨河连廊与彩虹桥。 -->
+  <g id="bridges">
+    <path fill="#a4a9a5" d="M597 297L634 282L775 619L739 634Z"/>
+    <path fill="#d6dad4" d="M609 300L614 298L753 626L748 628Z"/>
+    <path fill="#727e75" d="M1024 330L1040 335L1005 429L989 423Z"/>
+    <path fill="#eff1e7" d="M1029 332L1034 334L1000 427L995 425Z"/>
+  </g>
+</svg>

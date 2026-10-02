@@ -152,7 +152,7 @@ export function CampusMap({ pois, selectedId, panelOpen, placing, draftPos, onSe
       <div ref={viewport} className="um-viewport">
         <div className={`um-stage${panelOpen ? ' um-panel-offset' : ''}`}>
           <div ref={canvas} className="um-canvas" style={{ ['--um-zoom' as string]: zoom, aspectRatio: `${BASE_MAP.width} / ${BASE_MAP.height}` }}>
-            <img alt="深圳大学城自制地图底图" src={BASE_MAP.src} draggable={false} decoding="async" onLoad={() => setLoaded(true)} ref={(el) => {
+            <img alt="深圳大学城矢量地图底图" src={BASE_MAP.src} width={BASE_MAP.width} height={BASE_MAP.height} draggable={false} decoding="async" onLoad={() => setLoaded(true)} ref={(el) => {
                 if (el?.complete && !loaded) setLoaded(true)
               }} />
             <div

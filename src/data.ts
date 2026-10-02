@@ -1,7 +1,7 @@
 // 地点与标注数据，迁移自 UTSZ MAP。地点只用作初始数据：首次访问时写入数据库，之后由编辑在线维护。
 import type { BuildingCodeOption, CampusId, MapTextMark, Poi, PoiCategory, PoiSpecialTag } from './types'
 
-export const BASE_MAP = { src: "/plugins/utsz-map/base-map-260522.webp", width: 1448, height: 1086 }
+export const BASE_MAP = { src: "/plugins/utsz-map/base-map.svg", width: 1448, height: 1086 }
 
 export const campusLabels: Record<CampusId, string> = {
   "hit": "哈工大（深圳）",

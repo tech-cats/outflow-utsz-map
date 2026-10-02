@@ -26,7 +26,8 @@ outflow.plugin.json   插件清单（id、顶栏入口、入口文件、静态�
 src/server.ts         接口：地点增删改查、文档与地点的关联；阅读页中的「相关地点」
 src/web.tsx           前端入口：/map 页面与编辑页中的「相关地点」面板
 src/data.ts           底图、分类、楼栋编号、文字标注，以及地点的初始数据
-public/               底图与实拍照片（对外路径 /plugins/utsz-map/...）
+public/base-map.svg   SVG 色块底图（校区、道路、建筑、水体与绿地）
+public/pics/          实拍照片（对外路径 /plugins/utsz-map/...）
 ```
 
 ## 开发约定
@@ -35,6 +36,7 @@ public/               底图与实拍照片（对外路径 /plugins/utsz-map/...
 - 样式类名统一使用 `um-` 前缀，颜色尽量使用宿主的 CSS 变量，以适配深浅色主题
 - 类型检查随 Outflow 的 `pnpm typecheck` 一起进行
 - 底图坐标为相对底图宽高的百分比；更换底图时需要同步校准地点坐标
+- SVG 底图使用 `viewBox="0 0 1448 1086"`，沿用原底图坐标框架；各区域按 `id` 分组，方便直接编辑色块与轮廓，地点标记和文字由页面叠加
 
 ## 许可
 
