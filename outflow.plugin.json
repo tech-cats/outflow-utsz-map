@@ -1,0 +1,9 @@
+{
+  "id": "utsz-map",
+  "name": "大学城地图",
+  "description": "深圳大学城互动地图：实拍地点、入口提示，地点可以与攻略互相关联",
+  "nav": [{ "label": "地图", "href": "/map" }],
+  "server": "src/server.ts",
+  "web": "src/web.tsx",
+  "public": "public"
+}

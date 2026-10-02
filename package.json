@@ -1,0 +1,7 @@
+{
+  "name": "outflow-utsz-map",
+  "private": true,
+  "type": "module",
+  "description": "Outflow 插件：深圳大学城互动地图",
+  "license": "MIT"
+}
