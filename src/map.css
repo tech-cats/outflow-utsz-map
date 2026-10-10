@@ -62,7 +62,11 @@
 .um-detail { right: 16px; bottom: 16px; width: 460px; max-height: calc(100% - 32px); overflow-y: auto; }
 .um-sheet-handle { display: none; }
 .um-photo { position: relative; }
-.um-photo img { display: block; width: 100%; height: 256px; object-fit: cover; }
+.um-photo { background: var(--bg-soft); }
+.um-photo img { display: block; width: 100%; height: 256px; object-fit: cover; transition: opacity .2s; }
+.um-photo img.loading { opacity: 0; }
+.um-photo:has(img.loading)::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--fg) 6%, transparent), transparent); background-size: 200% 100%; animation: um-shimmer 1.2s linear infinite; }
+@keyframes um-shimmer { from { background-position: 100% 0; } to { background-position: -100% 0; } }
 .um-photo-empty { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; height: 220px; background: var(--bg-soft); color: var(--fg-muted); font-size: 14px; }
 .um-photo-nav { position: absolute; top: 50%; left: 12px; right: 12px; display: flex; justify-content: space-between; transform: translateY(-50%); pointer-events: none; }
 .um-photo-nav button { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid rgba(255, 255, 255, .75); border-radius: 50%; background: rgba(255, 255, 255, .9); color: #314139; cursor: pointer; pointer-events: auto; }

@@ -24,6 +24,7 @@ function EmptyPhoto({ label = '暂无实拍' }: { label?: string }) {
 export function PoiDetail({ poi, canEdit, onClose, onEdit, onMove }: Props) {
   const [index, setIndex] = useState(0)
   const [failed, setFailed] = useState<Set<string>>(new Set())
+  const [loaded, setLoaded] = useState<Set<string>>(new Set())
   const [expanded, setExpanded] = useState(false)
   const [copy, setCopy] = useState<'idle' | 'copied' | 'failed'>('idle')
   const [docs, setDocs] = useState<RelatedDoc[] | null>(null)
@@ -32,10 +33,8 @@ export function PoiDetail({ poi, canEdit, onClose, onEdit, onMove }: Props) {
   const photos = poi.photos
   const photo = photos[Math.min(index, photos.length - 1)]
 
+  // 换地点时组件会按 poi.id 重建（见 MapPage），这里只需加载相关攻略
   useEffect(() => {
-    setIndex(0)
-    setExpanded(false)
-    setDocs(null)
     mapApi
       .poiDocs(poi.id)
       .then((r) => setDocs(r.docs))
@@ -98,7 +97,20 @@ export function PoiDetail({ poi, canEdit, onClose, onEdit, onMove }: Props) {
           {failed.has(photo.src) ? (
             <EmptyPhoto label="图片加载失败" />
           ) : (
-            <img alt={photo.caption ?? poi.name} src={photo.src} decoding="async" draggable={false} onError={() => setFailed((s) => new Set(s).add(photo.src))} />
+            // 每张图片用新的 <img>：只换 src 时浏览器会一直显示上一张，网络慢时就会看到上一个地点的照片
+            <img
+              key={photo.src}
+              className={loaded.has(photo.src) ? undefined : 'loading'}
+              alt={photo.caption ?? poi.name}
+              src={photo.src}
+              decoding="async"
+              draggable={false}
+              ref={(el) => {
+                if (el?.complete && el.naturalWidth && !loaded.has(photo.src)) setLoaded((s) => new Set(s).add(photo.src))
+              }}
+              onLoad={() => setLoaded((s) => new Set(s).add(photo.src))}
+              onError={() => setFailed((s) => new Set(s).add(photo.src))}
+            />
           )}
           {photos.length > 1 && (
             <div className="um-photo-nav">

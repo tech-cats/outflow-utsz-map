@@ -170,6 +170,8 @@ export default function MapPage() {
         ) : (
           selected && (
             <PoiDetail
+              // 换地点时整块重建，照片、索引和相关攻略都不会残留上一个地点的
+              key={selected.id}
               poi={selected}
               canEdit={canEdit}
               onClose={() => select(undefined)}
